@@ -73,6 +73,6 @@ One the server side, the list of promos might have details such as start and end
 - [x] **Smooth Transitions**: Add CSS/JS for smooth replacement of the default promo.
 
 ### Phase 4: Advanced Features
-- [ ] **Geo-Targeting**: Utilize Netlify Edge `Context` to filter by country/region.
-- [ ] **Weighting**: Implement weighted random selection.
-- [ ] **Analytics**: Add basic impression tracking (log to console or external service).
+- [x] **Geo-Targeting**: Utilize Netlify Edge `Context` to filter by country/region.
+- [x] **Weighting**: Implement weighted random selection.
+- [x] **Analytics**: Add basic impression tracking (log to console or external service).

@@ -9,7 +9,9 @@
     "rules": {
       "startDate": "2023-01-01T00:00:00Z",
       "endDate": "2025-12-31T23:59:59Z",
-      "allowedSites": ["*"]
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
     }
   },
   {
@@ -22,7 +24,9 @@
     "rules": {
       "startDate": "2024-01-01T00:00:00Z",
       "endDate": "2024-12-31T23:59:59Z",
-      "allowedSites": ["example.com", "localhost"]
+      "allowedSites": ["example.com", "localhost"],
+      "allowedCountries": ["US", "CA", "GB"],
+      "weight": 5
     }
   },
   {
@@ -35,7 +39,9 @@
     "rules": {
       "startDate": "2020-01-01T00:00:00Z",
       "endDate": "2021-12-31T23:59:59Z",
-      "allowedSites": ["*"]
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
     }
   }
 ]

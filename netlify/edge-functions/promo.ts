@@ -25,8 +25,6 @@ export default async (request: Request, context: Context) => {
       hostname = new URL(origin).hostname;
     } catch (e) {
       // If origin is null or invalid (e.g. curl), we might treat it as allowed or not.
-      // For now, let's assume empty origin (direct request) is allowed for debugging, 
-      // or strictly enforce origin.
     }
     
     if (hostname && allAllowedSites.has(hostname)) {
@@ -45,9 +43,6 @@ export default async (request: Request, context: Context) => {
     });
   }
 
-  // If strict CORS is required and no header matches, we could return 403 here.
-  // But standard behavior is just not to send the ACAO header.
-
   const now = new Date();
   
   // Extract hostname from origin for filtering
@@ -57,6 +52,9 @@ export default async (request: Request, context: Context) => {
   } catch (e) {
     hostname = "localhost"; 
   }
+
+  // Get Country Code from Netlify Context
+  const countryCode = context.geo?.country?.code || "XX";
 
   // Filter promos
   const validPromos = promos.filter((promo) => {
@@ -70,11 +68,17 @@ export default async (request: Request, context: Context) => {
 
     // 2. Check Allowed Sites
     const allowedSites = promo.rules.allowedSites;
-    if (allowedSites.includes("*")) {
-      return true;
+    if (!allowedSites.includes("*") && !allowedSites.includes(hostname)) {
+      return false;
     }
-    
-    return allowedSites.includes(hostname);
+
+    // 3. Check Allowed Countries
+    const allowedCountries = promo.rules.allowedCountries || ["*"];
+    if (!allowedCountries.includes("*") && !allowedCountries.includes(countryCode)) {
+      return false;
+    }
+
+    return true;
   });
 
   // If no promos match, return 204 No Content
@@ -87,9 +91,31 @@ export default async (request: Request, context: Context) => {
     });
   }
 
-  // Random Selection
-  const randomIndex = Math.floor(Math.random() * validPromos.length);
-  const selectedPromo = validPromos[randomIndex];
+  // Weighted Random Selection
+  let totalWeight = 0;
+  for (const promo of validPromos) {
+    totalWeight += (promo.rules.weight || 1);
+  }
+
+  let randomValue = Math.random() * totalWeight;
+  let selectedPromo = validPromos[0];
+
+  for (const promo of validPromos) {
+    randomValue -= (promo.rules.weight || 1);
+    if (randomValue <= 0) {
+      selectedPromo = promo;
+      break;
+    }
+  }
+
+  // Basic Analytics Logging (Console for now)
+  console.log(JSON.stringify({
+    event: "impression",
+    promoId: selectedPromo.id,
+    timestamp: now.toISOString(),
+    country: countryCode,
+    site: hostname
+  }));
 
   return new Response(JSON.stringify(selectedPromo), {
     headers: {
