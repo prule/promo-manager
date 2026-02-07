@@ -65,7 +65,7 @@ One the server side, the list of promos might have details such as start and end
 ### Phase 2: Selection Logic
 - [x] **Filtering**: Implement logic to filter promos by `startDate`, `endDate`, and `allowedSites`.
 - [x] **Randomization**: Implement basic random selection if multiple promos match.
-- [ ] **CORS**: Configure CORS headers to allow requests only from authorized domains.
+- [x] **CORS**: Configure CORS headers to allow requests only from authorized domains.
 
 ### Phase 3: User Experience & Persistence
 - [ ] **Dismissal**: Update client script to handle "Close" button and save state to `localStorage`.
