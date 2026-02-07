@@ -3,7 +3,7 @@
     if (!promoBanner) return;
 
     const DISMISS_KEY = 'promo_dismissed';
-    
+
     // Check if previously dismissed
     try {
         if (localStorage.getItem(DISMISS_KEY)) {
@@ -31,7 +31,8 @@
     }
 
     // Replace with your actual Netlify URL
-    const API_URL = 'https://your-netlify-site.netlify.app/promo'; 
+    // const API_URL = 'https://your-netlify-site.netlify.app/promo';
+    const API_URL = 'http://localhost:8888/promo';
 
     fetch(API_URL)
         .then(response => {
@@ -46,7 +47,7 @@
             if (data && data.content && contentDiv) {
                 // Smooth transition
                 contentDiv.style.opacity = '0';
-                
+
                 setTimeout(() => {
                     contentDiv.innerHTML = `
                         <span>${data.content.text}</span>
