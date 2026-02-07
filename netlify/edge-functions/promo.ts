@@ -3,7 +3,21 @@ import promos from "../../src/promos.json" assert { type: "json" };
 
 export default async (request: Request, context: Context) => {
   const origin = request.headers.get("origin") || "";
+  const now = new Date();
   
+  // Extract hostname from origin for filtering
+  let hostname = "";
+  try {
+    hostname = new URL(origin).hostname;
+  } catch (e) {
+    hostname = "localhost"; 
+  }
+
+  // Get Country Code from Netlify Context
+  const countryCode = context.geo?.country?.code || "XX";
+
+  console.log(`[Request] Origin: ${origin}, Hostname: ${hostname}, Country: ${countryCode}`);
+
   // CORS Logic
   let allowAll = false;
   const allAllowedSites = new Set<string>();
@@ -20,13 +34,6 @@ export default async (request: Request, context: Context) => {
   if (allowAll) {
     corsHeader = "*";
   } else {
-    let hostname = "";
-    try {
-      hostname = new URL(origin).hostname;
-    } catch (e) {
-      // If origin is null or invalid (e.g. curl), we might treat it as allowed or not.
-    }
-    
     if (hostname && allAllowedSites.has(hostname)) {
       corsHeader = origin;
     }
@@ -34,6 +41,7 @@ export default async (request: Request, context: Context) => {
 
   // Handle OPTIONS request (Preflight)
   if (request.method === "OPTIONS") {
+    console.log(`[CORS] Preflight request handled. Header: ${corsHeader || "null"}`);
     return new Response(null, {
       headers: {
         "Access-Control-Allow-Origin": corsHeader || "null",
@@ -43,19 +51,6 @@ export default async (request: Request, context: Context) => {
     });
   }
 
-  const now = new Date();
-  
-  // Extract hostname from origin for filtering
-  let hostname = "";
-  try {
-    hostname = new URL(origin).hostname;
-  } catch (e) {
-    hostname = "localhost"; 
-  }
-
-  // Get Country Code from Netlify Context
-  const countryCode = context.geo?.country?.code || "XX";
-
   // Filter promos
   const validPromos = promos.filter((promo) => {
     // 1. Check Date Range
@@ -63,26 +58,32 @@ export default async (request: Request, context: Context) => {
     const endDate = new Date(promo.rules.endDate);
     
     if (now < startDate || now > endDate) {
+      // console.log(`[Filter] Promo ${promo.id} excluded by date.`);
       return false;
     }
 
     // 2. Check Allowed Sites
     const allowedSites = promo.rules.allowedSites;
     if (!allowedSites.includes("*") && !allowedSites.includes(hostname)) {
+      // console.log(`[Filter] Promo ${promo.id} excluded by site.`);
       return false;
     }
 
     // 3. Check Allowed Countries
     const allowedCountries = promo.rules.allowedCountries || ["*"];
     if (!allowedCountries.includes("*") && !allowedCountries.includes(countryCode)) {
+      // console.log(`[Filter] Promo ${promo.id} excluded by country.`);
       return false;
     }
 
     return true;
   });
 
+  console.log(`[Selection] Found ${validPromos.length} valid promos out of ${promos.length}.`);
+
   // If no promos match, return 204 No Content
   if (validPromos.length === 0) {
+    console.log("[Response] No content (204).");
     return new Response(null, { 
       status: 204, 
       headers: { 

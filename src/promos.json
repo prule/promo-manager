@@ -7,8 +7,8 @@
       "linkText": "Visit MyCountdownTo.com"
     },
     "rules": {
-      "startDate": "2023-01-01T00:00:00Z",
-      "endDate": "2025-12-31T23:59:59Z",
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
       "allowedSites": ["*"],
       "allowedCountries": ["*"],
       "weight": 1
@@ -22,10 +22,10 @@
       "linkText": "Visit DailyMotivationalQuotes.com"
     },
     "rules": {
-      "startDate": "2024-01-01T00:00:00Z",
-      "endDate": "2024-12-31T23:59:59Z",
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
       "allowedSites": ["example.com", "localhost"],
-      "allowedCountries": ["US", "CA", "GB"],
+      "allowedCountries": ["US", "CA", "GB", "AU"],
       "weight": 5
     }
   },
