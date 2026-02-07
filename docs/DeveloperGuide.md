@@ -13,7 +13,7 @@ This guide explains how to run, test, and deploy the Promo Manager locally.
 ## Project Structure
 
 *   `netlify/edge-functions/`: Contains the server-side logic (Edge Functions).
-*   `src/promos.json`: The "database" of available promos and their rules.
+*   `netlify/promos.json`: The "database" of available promos and their rules.
 *   `src/client.js`: The client-side script to be embedded in websites.
 *   `netlify.toml`: Netlify configuration file.
 
@@ -102,7 +102,7 @@ You can run the Netlify Edge Functions locally using the Netlify CLI.
 
 ## Modifying Promos
 
-Edit `src/promos.json` to add, remove, or update promos.
+Edit `netlify/promos.json` to add, remove, or update promos.
 *   **id**: Unique identifier.
 *   **content**: Text and links.
 *   **rules**:

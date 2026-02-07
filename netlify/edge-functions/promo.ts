@@ -1,5 +1,5 @@
 import { Context } from "https://edge.netlify.com";
-import promos from "../../src/promos.json" assert { type: "json" };
+import promos from "../promos.json" assert { type: "json" };
 
 export default async (request: Request, context: Context) => {
   const origin = request.headers.get("origin") || "";
