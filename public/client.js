@@ -62,3 +62,34 @@
             // Keep default promo on error
         });
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const promoBanner = document.getElementById('promo-banner');
+    const closeButton = document.getElementById('close-promo-btn');
+    const body = document.body;
+
+    // Function to update body padding based on banner visibility
+    function updateBodyPadding() {
+        if (promoBanner && window.getComputedStyle(promoBanner).display !== 'none') {
+            // Set padding based on the banner's actual height
+            const bannerHeight = promoBanner.offsetHeight;
+            body.style.paddingBottom = `${bannerHeight}px`;
+            body.style.transition = 'padding-bottom 0.3s ease'; // Optional: smooth transition
+        } else {
+            body.style.paddingBottom = '0';
+        }
+    }
+
+    // Don't run if the banner doesn't exist
+    if (!promoBanner) {
+        return;
+    }
+
+    // Initial check when the page loads
+    // We use a short delay to ensure all styles are applied and we get the correct height
+    setTimeout(updateBodyPadding, 100);
+
+    // Add a listener to update padding if the window is resized
+    window.addEventListener('resize', updateBodyPadding);
+
+});
