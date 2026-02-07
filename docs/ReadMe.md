@@ -68,9 +68,9 @@ One the server side, the list of promos might have details such as start and end
 - [x] **CORS**: Configure CORS headers to allow requests only from authorized domains.
 
 ### Phase 3: User Experience & Persistence
-- [ ] **Dismissal**: Update client script to handle "Close" button and save state to `localStorage`.
-- [ ] **Check Dismissal**: Update client script to check `localStorage` before fetching/displaying.
-- [ ] **Smooth Transitions**: Add CSS/JS for smooth replacement of the default promo.
+- [x] **Dismissal**: Update client script to handle "Close" button and save state to `localStorage`.
+- [x] **Check Dismissal**: Update client script to check `localStorage` before fetching/displaying.
+- [x] **Smooth Transitions**: Add CSS/JS for smooth replacement of the default promo.
 
 ### Phase 4: Advanced Features
 - [ ] **Geo-Targeting**: Utilize Netlify Edge `Context` to filter by country/region.
