@@ -31,8 +31,7 @@
     }
 
     // Replace with your actual Netlify URL
-    // const API_URL = 'https://your-netlify-site.netlify.app/promo';
-    const API_URL = 'http://localhost:8888/promo';
+    const API_URL = 'https://promo-manager.netlify.app/promo';
 
     fetch(API_URL)
         .then(response => {
