@@ -57,14 +57,14 @@ One the server side, the list of promos might have details such as start and end
 ## Implementation Plan
 
 ### Phase 1: Core Infrastructure
-- [ ] **Project Setup**: Initialize repository and Netlify configuration (`netlify.toml`).
-- [ ] **Data Model**: Define the JSON structure for the promo list (ID, content, rules).
-- [ ] **Edge Function (Basic)**: Create a Netlify Edge Function to serve a hardcoded promo.
-- [ ] **Client Script (Basic)**: Create a JS snippet to fetch the promo and replace the DOM element.
+- [x] **Project Setup**: Initialize repository and Netlify configuration (`netlify.toml`).
+- [x] **Data Model**: Define the JSON structure for the promo list (ID, content, rules).
+- [x] **Edge Function (Basic)**: Create a Netlify Edge Function to serve a hardcoded promo.
+- [x] **Client Script (Basic)**: Create a JS snippet to fetch the promo and replace the DOM element.
 
 ### Phase 2: Selection Logic
-- [ ] **Filtering**: Implement logic to filter promos by `startDate`, `endDate`, and `allowedSites`.
-- [ ] **Randomization**: Implement basic random selection if multiple promos match.
+- [x] **Filtering**: Implement logic to filter promos by `startDate`, `endDate`, and `allowedSites`.
+- [x] **Randomization**: Implement basic random selection if multiple promos match.
 - [ ] **CORS**: Configure CORS headers to allow requests only from authorized domains.
 
 ### Phase 3: User Experience & Persistence

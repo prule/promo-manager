@@ -1,0 +1,41 @@
+[
+  {
+    "id": "promo-1",
+    "content": {
+      "text": "Create beautiful countdown timers",
+      "link": "https://mycountdownto.com",
+      "linkText": "Visit MyCountdownTo.com"
+    },
+    "rules": {
+      "startDate": "2023-01-01T00:00:00Z",
+      "endDate": "2025-12-31T23:59:59Z",
+      "allowedSites": ["*"]
+    }
+  },
+  {
+    "id": "promo-2",
+    "content": {
+      "text": "Get daily motivational quotes",
+      "link": "https://dailymotivationalquotes.com",
+      "linkText": "Visit DailyMotivationalQuotes.com"
+    },
+    "rules": {
+      "startDate": "2024-01-01T00:00:00Z",
+      "endDate": "2024-12-31T23:59:59Z",
+      "allowedSites": ["example.com", "localhost"]
+    }
+  },
+  {
+    "id": "promo-3",
+    "content": {
+      "text": "Expired Promo Example",
+      "link": "https://example.com",
+      "linkText": "Don't click me"
+    },
+    "rules": {
+      "startDate": "2020-01-01T00:00:00Z",
+      "endDate": "2021-12-31T23:59:59Z",
+      "allowedSites": ["*"]
+    }
+  }
+]
