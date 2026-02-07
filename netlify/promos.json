@@ -1,5 +1,20 @@
 [
   {
+    "id": "promo-0",
+    "content": {
+      "text": "Turn your wardrobe into income",
+      "link": "https://app.ourfit.com.au",
+      "linkText": "Visit OurFit"
+    },
+    "rules": {
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
+    }
+  },
+  {
     "id": "promo-1",
     "content": {
       "text": "Create beautiful countdown timers",
@@ -26,7 +41,7 @@
       "endDate": "3000-12-31T23:59:59Z",
       "allowedSites": ["example.com", "localhost"],
       "allowedCountries": ["US", "CA", "GB", "AU"],
-      "weight": 5
+      "weight": 2
     }
   },
   {
