@@ -53,3 +53,26 @@ One the server side, the list of promos might have details such as start and end
 
 ### 7. Fallback Strategy
 *   **Error Handling:** Ensure default promo remains if the Edge function fails.
+
+## Implementation Plan
+
+### Phase 1: Core Infrastructure
+- [ ] **Project Setup**: Initialize repository and Netlify configuration (`netlify.toml`).
+- [ ] **Data Model**: Define the JSON structure for the promo list (ID, content, rules).
+- [ ] **Edge Function (Basic)**: Create a Netlify Edge Function to serve a hardcoded promo.
+- [ ] **Client Script (Basic)**: Create a JS snippet to fetch the promo and replace the DOM element.
+
+### Phase 2: Selection Logic
+- [ ] **Filtering**: Implement logic to filter promos by `startDate`, `endDate`, and `allowedSites`.
+- [ ] **Randomization**: Implement basic random selection if multiple promos match.
+- [ ] **CORS**: Configure CORS headers to allow requests only from authorized domains.
+
+### Phase 3: User Experience & Persistence
+- [ ] **Dismissal**: Update client script to handle "Close" button and save state to `localStorage`.
+- [ ] **Check Dismissal**: Update client script to check `localStorage` before fetching/displaying.
+- [ ] **Smooth Transitions**: Add CSS/JS for smooth replacement of the default promo.
+
+### Phase 4: Advanced Features
+- [ ] **Geo-Targeting**: Utilize Netlify Edge `Context` to filter by country/region.
+- [ ] **Weighting**: Implement weighted random selection.
+- [ ] **Analytics**: Add basic impression tracking (log to console or external service).
