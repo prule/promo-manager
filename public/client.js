@@ -1,6 +1,10 @@
-(function() {
+document.addEventListener('DOMContentLoaded', () => {
+
     const promoBanner = document.getElementById('promo-banner');
-    if (!promoBanner) return;
+    if (!promoBanner) {
+        console.log("No promo banner found");
+        return;
+    }
 
     const DISMISS_KEY = 'promo_dismissed';
 
@@ -30,7 +34,6 @@
         contentDiv.style.transition = 'opacity 0.3s ease-in-out';
     }
 
-    // Replace with your actual Netlify URL
     const API_URL = 'https://promo-manager.netlify.app/promo';
 
     fetch(API_URL)
@@ -60,7 +63,7 @@
             console.error('Error loading promo:', error);
             // Keep default promo on error
         });
-})();
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const promoBanner = document.getElementById('promo-banner');
