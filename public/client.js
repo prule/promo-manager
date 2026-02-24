@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Don't run if the banner doesn't exist
     if (!promoBanner) {
+        console.log("No promo banner found");
         return;
     }
 
