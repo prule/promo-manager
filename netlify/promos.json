@@ -11,7 +11,7 @@
       "endDate": "3000-12-31T23:59:59Z",
       "allowedSites": ["*"],
       "allowedCountries": ["*"],
-      "weight": 1
+      "weight": 2
     }
   },
   {
@@ -41,7 +41,7 @@
       "endDate": "3000-12-31T23:59:59Z",
       "allowedSites": ["example.com", "localhost"],
       "allowedCountries": ["US", "CA", "GB", "AU"],
-      "weight": 2
+      "weight": 1
     }
   },
   {
