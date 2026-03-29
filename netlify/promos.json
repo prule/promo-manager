@@ -62,9 +62,9 @@
   {
     "id": "promo-4",
     "content": {
-      "text": "Laptime Insights",
+      "text": "Lap Insights for ACC sim racers",
       "link": "https://laptimeinsights.com",
-      "linkText": "Lap Insights for ACC sim racers"
+      "linkText": "Lap Insights"
     },
     "rules": {
       "startDate": "2020-01-01T00:00:00Z",
