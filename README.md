@@ -17,8 +17,8 @@ Place the following HTML code inside the `<body>` tag of your page:
 ```html
 <div id="promo-banner" class="promo-banner">
     <div class="promo-content">
-        <span>Create beautiful countdown timers</span>
-        <a href="https://mycountdownto.com" target="_blank" rel="noopener noreferrer">Visit MyCountdownTo.com</a>
+        <span></span>
+        <a href="" target="_blank" rel="noopener noreferrer"></a>
     </div>
     <button id="close-promo-btn" class="close-promo-btn" aria-label="Close banner">&times;</button>
 </div>
