@@ -62,13 +62,103 @@
   {
     "id": "promo-4",
     "content": {
-      "text": "Lap Insights for ACC sim racers",
+      "text": "LapTimeInsights for ACC sim racers",
       "link": "https://laptimeinsights.com",
-      "linkText": "Lap Insights"
+      "linkText": "LapTimeInsights"
     },
     "rules": {
       "startDate": "2020-01-01T00:00:00Z",
       "endDate": "3021-12-31T23:59:59Z",
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
+    }
+  },
+  {
+    "id": "promo-5",
+    "content": {
+      "text": "Be Useful",
+      "link": "https://amzn.to/4mU1RWj",
+      "linkText": "Buy on Amazon"
+    },
+    "rules": {
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
+    }
+  },
+  {
+    "id": "promo-6",
+    "content": {
+      "text": "Mindset",
+      "link": "https://amzn.to/4tEATVa",
+      "linkText": "Buy on Amazon"
+    },
+    "rules": {
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
+    }
+  },
+  {
+    "id": "promo-7",
+    "content": {
+      "text": "REWORK",
+      "link": "https://amzn.to/3Osu2yB",
+      "linkText": "Buy on Amazon"
+    },
+    "rules": {
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
+    }
+  },
+  {
+    "id": "promo-8",
+    "content": {
+      "text": "The Defining Decade",
+      "link": "https://amzn.to/4tM7OGT",
+      "linkText": "Buy on Amazon"
+    },
+    "rules": {
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
+    }
+  },
+  {
+    "id": "promo-9",
+    "content": {
+      "text": "The Lean Startup",
+      "link": "https://amzn.to/426TnBl",
+      "linkText": "Buy on Amazon"
+    },
+    "rules": {
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
+      "allowedSites": ["*"],
+      "allowedCountries": ["*"],
+      "weight": 1
+    }
+  },
+  {
+    "id": "promo-10",
+    "content": {
+      "text": "Tidy First",
+      "link": "https://amzn.to/4cB4oRJ",
+      "linkText": "Buy on Amazon"
+    },
+    "rules": {
+      "startDate": "2000-01-01T00:00:00Z",
+      "endDate": "3000-12-31T23:59:59Z",
       "allowedSites": ["*"],
       "allowedCountries": ["*"],
       "weight": 1
