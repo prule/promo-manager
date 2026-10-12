@@ -1,15 +1,16 @@
 {
-  "name": "promo-manager",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "tsc"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "^5.5.3"
-  },
-  "private": true
+    "name": "promo-manager",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "build": "tsc"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "typescript": "^5.5.3"
+    },
+    "private": true,
+    "packageManager": "pnpm@11.18.0"
 }
